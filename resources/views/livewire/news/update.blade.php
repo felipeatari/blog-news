@@ -42,7 +42,11 @@
                 <button class="w-[200px] bg-blue-700 hover:bg-blue-500 hover:text-blue-900 hover:font-semibold transition duration-300 ease-in-out text-white font-semibold py-2 px-3 mt-8 mb-2">Salvar Noticia</button>
             </form>
 
-            <x-news.banner :news_id="$news->id" :messageActionBanner="$messageUpdateBanner" :statusActionBanner="$statusUpdateBanner" />
+            <x-news.banner
+                :news_id="$news->id"
+                :messageActionBanner="$messageUpdateBanner"
+                :statusActionBanner="$statusUpdateBanner"
+            />
         </div>
     </div>
 </div>

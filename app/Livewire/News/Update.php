@@ -61,7 +61,8 @@ class Update extends Component
     public function saveNewsBanner(int $news_id)
     {
         if (! $this->banner) {
-            $this->addError('banner', 'Nenhuma imagem selecionada');
+            $this->statusUpdateBanner = false;
+            $this->messageUpdateBanner = 'Nenhuma imagem selecionada';
 
             return;
         }

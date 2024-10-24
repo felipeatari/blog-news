@@ -1,6 +1,9 @@
 @props(['news_id', 'messageActionBanner', 'statusActionBanner'])
 <form wire:submit="saveNewsBanner({{ $news_id }})" class="w-full flex items-center justify-center flex-col mt-[40px]">
     @if ($messageActionBanner)
+        @error('banner')
+            <span class="w-full text-red-600 mb-2">{{ $message }}</span>
+        @enderror
         <div
         {{ $attributes->class([
             'w-full border mt-1 text-sm p-2',

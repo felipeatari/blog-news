@@ -3,7 +3,6 @@
 namespace App\Livewire\News;
 
 use App\Models\News;
-use App\Models\NewsBaneer;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Rule;
@@ -33,10 +32,6 @@ class Store extends Component
     public string $messageCreateBanner = '';
     public bool $statusCreateBanner = false;
 
-    public string $messageSave = '';
-
-    public string $display = 'flex';
-
     public function saveNews()
     {
         $this->validate();
@@ -52,7 +47,6 @@ class Store extends Component
                 $this->news_id = $news->id;
                 $this->statusCreateNews = true;
                 $this->messageCreateNews = 'Noticia criada com sucesso';
-                $this->display = 'hidden';
             });
         } catch (\Exception $e) {
             $this->statusCreateNews = false;
@@ -63,7 +57,8 @@ class Store extends Component
     public function saveNewsBanner(int $news_id)
     {
         if (! $this->banner) {
-            $this->addError('banner', 'Nenhuma imagem selecionada');
+            $this->statusCreateBanner = false;
+            $this->messageCreateBanner = 'Nenhuma imagem selecionada';
 
             return;
         }
@@ -81,9 +76,9 @@ class Store extends Component
             $news->save();
 
             $this->statusCreateBanner = true;
-            $this->messageCreateBanner = 'Banner criado com sucess';
+            $this->messageCreateBanner = 'Banner criado com sucesso';
 
-            return $this->redirect('/');
+            return $this->redirect('/noticia/' . $news_id);
         } catch (\Exception $e) {
             DB::rollBack();
 
