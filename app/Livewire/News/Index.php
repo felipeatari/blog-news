@@ -11,12 +11,12 @@ class Index extends Component
 
     public function render()
     {
-        if ($this->search ) {
+        if ($this->search) {
             $news = News::where('title', 'like', '%' . $this->search . '%')
-            ->orWhere('legend', 'like', '%' . $this->search . '%')
-            ->orWhere('content', 'like', '%' . $this->search . '%')
-            ->orderBy('id', 'DESC')
-            ->get();
+                ->orWhere('legend', 'like', '%' . $this->search . '%')
+                ->orWhere('content', 'like', '%' . $this->search . '%')
+                ->orderBy('id', 'DESC')
+                ->get();
         }
         else {
             $news = News::orderBy('id', 'DESC')->get();
