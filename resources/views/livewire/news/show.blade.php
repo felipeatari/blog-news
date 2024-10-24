@@ -11,9 +11,13 @@
     <div class="w-[900px] mt-10 p-10">
         <h1 class="text-2xl font-bold mb-5">{{ $news->title }}</h1>
 
-        <div class="bg-gray-200 flex items-center justify-center w-[900px] h-[400px] mt-10 mb-10">
+        <div class="flex items-center justify-center w-[900px] h-[400px] mt-10 mb-10">
             @if ($news->banner)
                 <img class="h-full object-cover" src="{{ asset($news->banner) }}" alt="banner">
+            @else
+                <div class="border-2 border-black w-full h-full flex items-center justify-center">
+                    <p class="text-3xl">Banner</p>
+                </div>
             @endif
         </div>
 

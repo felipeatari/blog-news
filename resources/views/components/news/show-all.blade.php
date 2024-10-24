@@ -5,6 +5,10 @@
         <div class="flex items-center justify-center w-[150px] h-[150px]">
             @if ($item->banner)
                 <img class="h-full object-cover" src="{{ $item->banner }}" alt="banner">
+            @else
+                <div class="border-2 border-black w-full h-full flex items-center justify-center">
+                    <p class="text-2xl">Banner</p>
+                </div>
             @endif
         </div>
 
