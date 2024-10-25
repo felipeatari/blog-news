@@ -60,13 +60,15 @@ php artisan serve
 ```bash
 php artisan migrate
 ```
-- Obs.: Se adicionar a flag --seed após "migrate", o banco de dados é preenchido com dados fakes.
+
+**Preenche o banco de dados com dados fake (opicional):**
+- Se for via Docker:
 ```bash
-./vendor/bin/sail artisan migrate --seed
+./vendor/bin/sail artisan db:seed
 ```
-- Ou:
+- Se não for via Docker:
 ```bash
-php artisan migrate --seed
+php artisan db:seed
 ```
 
 ---
