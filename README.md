@@ -1,17 +1,17 @@
 ## NOTA:
-- Desenvolvi o sistema para gerenciar as noticias com Laravel, Livewere e Tailwind CSS.
-- No processo de desenvolvimento rodei a aplicação via Docker com o Sail. Pela praticidade recomendo rodar dessa forma.
-- Caso não optar por rodar via Docker, recomendo fortemente utilizar o PHP 8.2+, pois estou utilizando alguns recursos dessa versão.
-- Independente da forma que for rodar, é obrigatório ter o composer instalado.
-- Também necessário ter o npm instalado para buildar o Tailwind CSS.
+- Desenvolvi o sistema para gerenciar notícias com Laravel, Livewire e Tailwind CSS.
+- Durante o desenvolvimento, rodei a aplicação via Docker com o Sail. Pela praticidade, recomendo rodar dessa forma.
+- Caso opte por não rodar via Docker, recomendo fortemente utilizar o PHP 8.2+, pois estou utilizando alguns recursos dessa versão.
+- Independentemente da forma como for rodar, é obrigatório ter o Composer instalado.
+- Também é necessário ter o npm instalado para compilar o Tailwind CSS.
 
 ## Configurações:
-- Após baixar o projeto do Github, localize o arquivo ".env.php.example".
-- Depois faça uma cópia dele e renomeie umas das cópias de "env.php.example" para "env.php".
-- Obs.: Importante manter um arquivo ".env.php.example", pois o ".env" não é commitado.
+- Após baixar o projeto do GitHub, localize o arquivo ".env.example".
+- Faça uma cópia e renomeie uma das cópias de "env.example" para ".env".
+- Obs.: É importante manter o arquivo ".env.example", pois o ".env" não é commitado.
 
-**Configurar rota e bando de dados se necessário no ".env":**
--  Para a rota localize:
+**Configurar rota e banco de dados, se necessário, no ".env":**
+- Para a rota, localize:
 ```env
 APP_URL=http://localhost
 APP_PORT=8080
@@ -19,23 +19,23 @@ APP_PORT=8080
 
 ---
 
-- Para o banco de dados localize:
+- Para o banco de dados, localize:
 ```env
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
 DB_DATABASE=laravel
-DB_USERNAME=Sail
+DB_USERNAME=sail
 DB_PASSWORD=password
 ```
-- Obs.: Se for rodar via Sail (Docker) não precisa alterar.
+- Obs.: Se for rodar via Sail (Docker), não é necessário alterar.
 
 ## Rodar o projeto:
-- Para instalar o Laravel, no terminal execute:
+- Para instalar o Laravel, execute no terminal:
 ```bash
 composer install
 ```
-- Obs.: Vai baixar todas as dependencias.
+- Obs.: Isso vai baixar todas as dependências.
 
 ---
 
@@ -46,7 +46,7 @@ composer install
 ```
 - Se não for via Docker:
 ```bash
-php server
+php artisan serve
 ```
 
 ---
@@ -70,5 +70,5 @@ php artisan migrate
 ```
 - Se não for via Docker:
 ```bash
-./vendor/bin/sail npm install && ./vendor/bin/sail npm run build
+npm install && npm run build
 ```
