@@ -60,6 +60,26 @@ php artisan serve
 ```bash
 php artisan migrate
 ```
+- Obs.: Se adicionar a flag --seed após "migrate", o banco de dados é preenchido com dados fakes.
+```bash
+./vendor/bin/sail artisan migrate --seed
+```
+- Ou:
+```bash
+php artisan migrate --seed
+```
+
+---
+
+**Tornar o storage publico (importante para acessar as imagens):**
+- Se for via Docker:
+```bash
+./vendor/bin/sail artisan storage:link
+```
+- Se não for via Docker:
+```bash
+php artisan storage:link
+```
 
 ---
 
